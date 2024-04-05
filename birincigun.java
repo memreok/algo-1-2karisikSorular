@@ -7,8 +7,8 @@ public class birincigun {
 		System.out.println(isPolindrom("kayak"));
 		System.out.println(tersCevir("deneme"));
 		int[] dizi = { 1, 8, 7, 20, 13, 53 };
-		System.out.println(minGap(dizi));
-		System.out.println(CollatzCalculate(15));
+		System.out.println(minGap(dizi)); // dizideki sıralı eleman ikilisinden en küçük farklıyı yazdırma
+		System.out.println(CollatzCalculate(15)); // 
 		System.out.println(maxGap(dizi));
 		System.out.println(asalSayi(dizi)); // asal sayıları yazdırma
 		System.out.println(asalSayi(dizi).size()); // kaç tane olduğunu yazdırma
@@ -45,7 +45,8 @@ public class birincigun {
 		}
 		System.out.println("toplam: " + j);
 	}
-
+	
+	// aranan harf kaç tane
 	public static int SayiBul(String metin) {
 		char aranan = 'e';
 		int toplam = 0;
@@ -58,6 +59,7 @@ public class birincigun {
 		return toplam;
 	}
 
+	// kelimeyi ters çevirme
 	public static String tersCevir(String metin) {
 		String kelime = "";
 		for (int i = (metin.length() - 1); i >= 0; i--) {// deneme
@@ -67,6 +69,7 @@ public class birincigun {
 		return kelime;
 	}
 
+	// kelimenin tersten yazılışı ve normal yazılışı aynı mı 
 	public static boolean isPolindrom(String kelime) {
 		int baslangic = 0;
 		int bitis = kelime.length() - 1;
@@ -80,6 +83,7 @@ public class birincigun {
 		return true;
 	}
 
+	// dizideki sıralı eleman ikilisinden en küçük farklıyı yazdırma
 	public static int minGap(int[] dizi) {
 		if (dizi.length < 2) {
 			return 0;
@@ -94,6 +98,7 @@ public class birincigun {
 		return enKucuk;
 	}
 
+	// verilen sayıyı bir olana kadar işlem uygulamam
 	public static ArrayList<Integer> CollatzCalculate(int sayi) {
 		ArrayList<Integer> cıktıDizisi = new ArrayList<>();
 		while (sayi != 1) {
@@ -108,6 +113,7 @@ public class birincigun {
 		return cıktıDizisi;
 	}
 
+	// dizideki sıralı eleman ikilisinden en büyük farklıyı yazdırma
 	public static int maxGap(int[] dizi) {
 
 		int enBuyuk = dizi[1] - dizi[0];
@@ -121,6 +127,7 @@ public class birincigun {
 
 	}
 
+	// listedeki asalları döndürme
 	public static ArrayList<Integer> asalSayi(int[] dizi) {
 		ArrayList<Integer> asallar = new ArrayList<Integer>();
 
@@ -140,6 +147,7 @@ public class birincigun {
 		return asallar;
 	}
 
+	// roman rakamlarıyla olan ifadeyi sayı olarak yazma ( birkaç eksik olabilir. mesela küçük harfleri büyük yapamıyorum. )
 	public static int romanToInt(String s) {
 		int result = 0;
 		s.toUpperCase();
